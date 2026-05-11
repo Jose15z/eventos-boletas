@@ -1,21 +1,51 @@
 # eventos-boletas
-Los pasos son estos:
 
-1. Abre una terminal en backend.
-2. Inicia el backend con Maven Wrapper.
-   - En Linux: `./mvnw spring-boot:run`
-3. Deja esa terminal corriendo. El backend debe quedar en puerto 8080.
-4. Abre otra terminal en frontend.
-5. Instala dependencias la primera vez.
-   - `npm install`
-6. Levanta el frontend.
-   - `npm run dev`
-7. Abre el navegador en la URL que te muestre Vite, normalmente `http://localhost:5173`.
+Guía rápida para ejecutar el proyecto (paso a paso).
 
-Verificación rápida:
-- Backend: debe responder en `http://localhost:8080`
-- H2: `http://localhost:8080/h2-console`
-- Credenciales H2 según application.properties: usuario `sa`, sin contraseña, URL `jdbc:h2:mem:eventosdb`
-- Frontend usa la API en `http://localhost:8080/api` según api.js
+Prerequisitos
+- Java (JDK) instalado (versión compatible con Spring Boot del proyecto).
+- Node.js y npm instalados (para el frontend).
+- Permisos de ejecución para el Maven Wrapper en Linux: `chmod +x mvnw` si hace falta.
 
-Si quieres, te doy los comandos exactos para copiar y pegar en Linux, paso por paso.
+1) Ejecutar el backend
+- Abre una terminal y sitúate en la carpeta del backend:
+
+   cd backend
+
+- Arranca la aplicación con el Maven Wrapper:
+
+   ./mvnw spring-boot:run
+
+- Deja esta terminal abierta; por defecto el backend escuchará en el puerto `8080`.
+
+2) Ejecutar el frontend
+- Abre otra terminal y sitúate en la carpeta del frontend:
+
+   cd frontend
+
+- Si es la primera vez, instala las dependencias:
+
+   npm install
+
+- Arranca el frontend (Vite):
+
+   npm run dev
+
+- Abre en el navegador la URL que muestre Vite (normalmente `http://localhost:5173`).
+
+3) Verificación rápida
+- Backend: http://localhost:8080
+- API base que usa el frontend: http://localhost:8080/api
+- Consola H2 (base en memoria): http://localhost:8080/h2-console
+   - Credenciales por defecto (según application.properties): usuario `sa`, sin contraseña
+   - JDBC URL: `jdbc:h2:mem:eventosdb`
+
+4) Comandos útiles
+- Ejecutar tests del backend:
+
+   ./mvnw test
+
+- Empaquetar el backend (jar):
+
+   ./mvnw package
+
