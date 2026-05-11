@@ -24,6 +24,8 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente")
     private List<Compra> compras;
 
+    public Cliente() {
+    }
 
     public Cliente(String nombre, String email, String telefono, String estado) {
         this.nombre = nombre;

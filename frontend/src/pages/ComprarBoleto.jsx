@@ -33,13 +33,20 @@ function ComprarBoleto() {
   const cargarDatos = async () => {
     try {
       const respuestaClientes = await api.get("/clientes");
-      const respuestaEventos = await api.get("/eventos");
-
       setClientes(respuestaClientes.data);
+    } catch (error) {
+      mostrarMensaje(
+        "Error al cargar clientes. Revisa que el backend esté encendido.",
+        "error"
+      );
+    }
+
+    try {
+      const respuestaEventos = await api.get("/eventos");
       setEventos(respuestaEventos.data);
     } catch (error) {
       mostrarMensaje(
-        "Error al cargar datos. Revisa que el backend esté encendido.",
+        "Error al cargar eventos. Revisa que el backend esté encendido.",
         "error"
       );
     }
