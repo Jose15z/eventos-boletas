@@ -17,7 +17,10 @@ import co.edu.uniquindio.backend.repository.ClienteRepository;
 
 @RestController
 @RequestMapping("/api/clientes")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "https://TU-FRONTEND.vercel.app"
+})
 public class ClienteController {
 
     private final ClienteRepository clienteRepository;

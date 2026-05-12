@@ -17,7 +17,10 @@ import co.edu.uniquindio.backend.repository.EventoRepository;
 
 @RestController
 @RequestMapping("/api/eventos")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "https://TU-FRONTEND.vercel.app"
+})
 public class EventoController {
 
     private final EventoRepository eventoRepository;
