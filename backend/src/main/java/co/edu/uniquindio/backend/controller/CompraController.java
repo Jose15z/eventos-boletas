@@ -14,7 +14,7 @@ import co.edu.uniquindio.backend.service.CompraService;
 @RequestMapping("/api/compras")
 @CrossOrigin(origins = {
         "http://localhost:5173",
-        "https://TU-FRONTEND.vercel.app"
+        "https://eventos-boletas.vercel.app"
 })
 public class CompraController {
 
